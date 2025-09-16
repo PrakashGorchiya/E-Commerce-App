@@ -1,0 +1,154 @@
+/* Theme variables */
+:root {
+	--color-bg: #ffffff;
+	--color-surface: #f8fafc;
+	--color-elevated: #ffffff;
+	--color-primary: #2563eb;
+	--color-primary-600: #1d4ed8;
+	--color-accent: #10b981;
+	--color-text: #111827;
+	--color-text-dim: #6b7280;
+	--color-border: #e5e7eb;
+	--radius-sm: 8px;
+	--radius-md: 12px;
+	--radius-lg: 18px;
+	--shadow-sm: 0 4px 10px rgba(0,0,0,0.06);
+	--shadow-md: 0 10px 24px rgba(0,0,0,0.12);
+	--shadow-lg: 0 20px 40px rgba(0,0,0,0.18);
+}
+
+/* Base reset enhancements */
+html, body, #root {
+	height: 100%;
+	background: var(--color-bg);
+	color: var(--color-text);
+	font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Links */
+a {
+	color: var(--color-primary);
+	text-decoration: none;
+}
+a:hover {
+	color: var(--color-primary-600);
+}
+
+/* Containers */
+.container-elevated {
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow-md);
+}
+
+/* Buttons */
+.button-primary {
+	background: linear-gradient(135deg, var(--color-primary), var(--color-primary-600));
+	border: 1px solid transparent;
+	color: #fff;
+	padding: 10px 16px;
+	border-radius: var(--radius-sm);
+	transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
+	box-shadow: var(--shadow-sm);
+}
+.button-primary:hover {
+	transform: translateY(-1px);
+	filter: brightness(1.05);
+}
+.button-primary:active {
+	transform: translateY(0);
+	filter: brightness(.98);
+}
+.button-ghost {
+	background: transparent;
+	border: 1px solid var(--color-border);
+	color: var(--color-text);
+	padding: 10px 14px;
+	border-radius: var(--radius-sm);
+}
+
+/* Navbar */
+.navbar-glass {
+	backdrop-filter: saturate(180%) blur(12px);
+	background: var(--color-surface);
+	background-color: var(--color-surface) !important;
+	border-bottom: 1px solid var(--color-border);
+	color: var(--color-text);
+	box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+
+.navbar-glass a { color: var(--color-text); }
+.navbar-glass a:hover { color: var(--color-primary-600); }
+
+/* Cards */
+.product-card {
+	background: var(--color-elevated);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
+	box-shadow: var(--shadow-sm);
+	transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, filter .2s ease;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.product-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+	border-color: var(--color-primary);
+}
+.product-card .card-title,
+.product-card .card-text {
+	color: var(--color-text);
+}
+.product-card .card-title { font-size: 1rem; }
+.product-card .card-text { font-size: .9rem; }
+.product-image {
+	height: 200px;
+	width: 100%;
+	object-fit: cover;
+	border-top-left-radius: var(--radius-md);
+	border-top-right-radius: var(--radius-md);
+}
+
+/* Enforce consistent card body spacing */
+.product-card .card-body {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.product-card .card-title { font-weight: 600; }
+.product-card .card-text { opacity: .9; }
+
+/* When used in bootstrap grid, allow consistent vertical spacing */
+.product-grid-row { row-gap: 24px; }
+
+/* Inputs */
+.input-field {
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	color: var(--color-text);
+	border-radius: var(--radius-sm);
+	padding: 8px 12px;
+}
+.input-field::placeholder { color: var(--color-text-dim); }
+
+/* Utilities */
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.gap-8 { gap: 8px; }
+.gap-12 { gap: 12px; }
+.mt-32 { margin-top: 32px; }
+.p-16 { padding: 16px; }
+.p-24 { padding: 24px; }
+
+/* Existing overrides */
+Button{
+    margin: 10px;
+}
